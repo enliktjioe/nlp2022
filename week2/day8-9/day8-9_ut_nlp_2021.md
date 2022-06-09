@@ -1,4 +1,4 @@
-# Day 8 - UT NLP 2021
+# Day 8/9 - UT NLP 2021
 
 https://courses.cs.ut.ee/2021/NLP/spring/Main/Lectures
 
@@ -102,3 +102,58 @@ https://courses.cs.ut.ee/2021/NLP/spring/Main/Lectures
 
 
 
+## Convolutional neural networks
+
+- Feature Extraction in Image
+  ![image-20220609205447256](img/day8-9_ut_nlp_2021/image-20220609205447256.png)
+- ![image-20220609205502094](img/day8-9_ut_nlp_2021/image-20220609205502094.png)
+- Convolutional layer for text
+  - With different filters
+    ![image-20220609205621541](img/day8-9_ut_nlp_2021/image-20220609205621541.png)
+
+
+
+## Sequence Tagging
+
+- POS Tagging
+  - Part-of-speech tags, syntactic categories, word classes
+  - POS tags give information about the word and its neighbors
+  - Useful for many other NLP tasks: information extraction, syntactic parsing, information retrieval, summarization
+  - Example:
+    ![image-20220609205855414](img/day8-9_ut_nlp_2021/image-20220609205855414.png)
+- Named Entity Recognition
+  - Find all **named entities** in the text and label their types
+    ![image-20220609210026844](img/day8-9_ut_nlp_2021/image-20220609210026844.png)
+  - Type of named entities
+    ![image-20220609210101146](img/day8-9_ut_nlp_2021/image-20220609210101146.png)
+
+
+
+## Contextual word embeddings
+
+- ELMo – Embeddings from Language Models
+  - Task-specific combination of the language model layer representations
+  - For each token, there are 2*L+1 representations in a L-layer language model
+  - ELMo constructs a single token vector from all these representations
+  - Possible ways of doing it:
+    - Take the concatenation of forward and backward representations from the last layer
+    - Task-specific weighting of all language model layers
+- Transformer
+  - Transformer is a powerful attentionbased feedforward building block
+  - Typically several transformer layers are used in a model
+  - It can be used as an encoder-decoder model
+  - modern machine translation systems are based on transformer architecture
+- BERT: Bidirectional Encoder Representations from Transformer
+  - Input
+    ![image-20220609210820731](img/day8-9_ut_nlp_2021/image-20220609210820731.png)
+  - Available BERT models
+    - Huggingface transformers library offers good access to available BERT models: https://huggingface.co/transformers/ 
+    - Cased and uncased models
+    - Smaller and larger models:
+      ![image-20220609210913745](img/day8-9_ut_nlp_2021/image-20220609210913745.png)
+    - First models masked out sub-word tokens, now available models that mask out whole words
+  - Non-English BERT models
+    - BERT models are available for several languages, including: 
+      ● Chinese ● German ● Japanese ● Finnish ● Dutch
+    - These models are also available via huggingface transformers library
+    - We have also trained a model for Estonian that is available: https://huggingface.co/tartuNLP
